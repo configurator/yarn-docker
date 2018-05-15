@@ -32,3 +32,7 @@ to
 
     repo=yarn
     for uid in 777; do
+
+You may also specify a uid (or more than one) in the commandline to build.sh
+
+    ./build.sh 777 888 999
