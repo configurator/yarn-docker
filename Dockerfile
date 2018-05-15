@@ -2,10 +2,10 @@ FROM node:10-alpine
 
 ARG uid
 
-RUN mkdir -p /yarn/cache && chown "$uid:$uid" /yarn/cache
+RUN mkdir -p /yarn/cache /yarn/mirror \
+    && chown "$uid:$uid" /yarn/cache /yarn/mirror
 USER $uid
 VOLUME /yarn
-ENV YARN_CACHE_FOLDER=/yarn/cache
 
-ENTRYPOINT [ "yarn" ]
+ENTRYPOINT [ "yarn", "--cache-folder", "/yarn/cache/", "--yarn-offline-mirror", "/yarn/mirror" ]
 CMD []
