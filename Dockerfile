@@ -7,5 +7,5 @@ RUN mkdir -p /yarn/cache /yarn/mirror \
 USER $uid
 VOLUME /yarn
 
-ENTRYPOINT [ "yarn", "--cache-folder", "/yarn/cache/", "--yarn-offline-mirror", "/yarn/mirror" ]
+ENTRYPOINT [ "yarn", "--cache-folder", "/yarn/cache/" ]
 CMD []
